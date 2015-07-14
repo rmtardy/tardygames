@@ -62,5 +62,5 @@ while($lives>0){
     }
     $lives--;
 }
-echo ("You ran out of lives. Suck me\n");
+echo ("You ran out of lives. You lose.\n");
     ?>
