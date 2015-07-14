@@ -42,7 +42,7 @@ while($lives>0){
                     }
                     else{ $spell = "lives";
                     }
-                    $input2 = readline("Who is ". $random."'s football coach: \.n");
+                    $input2 = readline("Who is ". $random."'s football coach: \n");
                     $lower_input2 = strtoupper($input2);
                     if($lower_input2 == $school[$random][2]) {
                         echo "\nCongratulations! You are a master of ". $random ."!\n\n";
