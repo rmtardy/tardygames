@@ -1,456 +1,467 @@
 <?php
+
+function getTypeMultiplier($typeA, $typeD){
+
 $typeMult = 1;
 
-switch ($typeA) {
-    case 'normal':
-        switch ($typeD){
-            case 'rock' :
-                $typeMult == 0.5;
-                break;
-            case 'ghost' :
-                $typeMult == 0;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'fire':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 0.5;
-                break;
-            case 'water' :
-                $typeMult == 0.5;
-                break;
-            case 'grass' :
-                $typeMult == 2;
-                break;
-            case 'ice' :
-                $typeMult == 2;
-                break;
-            case 'bug' :
-                $typeMult == 2;
-                break;
-            case 'rock' :
-                $typeMult == 0.5;
-                break;
-            case 'dragon' :
-                $typeMult == 0.5;
-                break;
-            case 'steel' :
-                $typeMult == 2;
-                break;
-            default:
-                break;
-        } break;
-    case 'water':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 2;
-                break;
-            case 'ground' :
-                $typeMult == 2;
-                break;
-            case 'grass' :
-                $typeMult == 0.5;
-                break;
-            case 'water' :
-                $typeMult == 0.5;
-                break;
-            case 'rock' :
-                $typeMult == 2;
-                break;
-            case 'dragon' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'electric':
-        switch ($typeD){
-            case 'water' :
-                $typeMult == 2;
-                break;
-            case 'electric' :
-                $typeMult == 0.5;
-                break;
-            case 'grass' :
-                $typeMult == 0.5;
-                break;
-            case 'ground' :
-                $typeMult == 0;
-                break;
-            case 'electric' :
-                $typeMult == 0.5;
-                break;
-            case 'grass' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'grass':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 0.5;
-                break;
-            case 'water' :
-                $typeMult == 2;
-                break;
-            case 'grass' :
-                $typeMult == 0.5;
-                break;
-            case 'poison' :
-                $typeMult == 0.5;
-                break;
-            case 'ground' :
-                $typeMult == 2;
-                break;
-            case 'flying' :
-                $typeMult == 0.5;
-                break;
-            case 'bug' :
-                $typeMult == 0.5;
-                break;
-            case 'rock' :
-                $typeMult == 2;
-                break;
-            case 'dragon' :
-                $typeMult == 0.5;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'ice':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 0.5;
-                break;
-            case 'water' :
-                $typeMult == 0.5;
-                break;
-            case 'grass' :
-                $typeMult == 2;
-                break;
-            case 'ice' :
-                $typeMult == 0.5;
-                break;
-            case 'ground' :
-                $typeMult == 2;
-                break;
-            case 'flying' :
-                $typeMult == 2;
-                break;
-            case 'dragon' :
-                $typeMult == 2;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'fighting':
-        switch ($typeD){
-            case 'normal' :
-                $typeMult == 2;
-                break;
-            case 'ice' :
-                $typeMult == 2;
-                break;
-            case 'psychic' :
-                $typeMult == 0.5;
-                break;
-            case 'poison' :
-                $typeMult == 0.5;
-                break;
-            case 'dark' :
-                $typeMult == 2;
-                break;
-            case 'flying' :
-                $typeMult == 0.5;
-                break;
-            case 'bug' :
-                $typeMult == 0.5;
-                break;
-            case 'rock' :
-                $typeMult == 2;
-                break;
-            case 'ghost' :
-                $typeMult == 0;
-                break;
-            case 'steel' :
-                $typeMult == 2;
-                break;
-            case 'fairy' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'poison':
-        switch ($typeD{
-            case 'poison' :
-                $typeMult == 0.5;
-                break;
-            case 'ground' :
-                $typeMult == 0.5;
-                break;
-            case 'grass' :
-                $typeMult == 2;
-                break;
-            case 'steel' :
-                $typeMult == 0;
-                break;
-            case 'rock' :
-                $typeMult == 0.5;
-                break;
-            case 'ghost' :
-                $typeMult == 0.5;
-                break;
-            case 'fairy' :
-                $typeMult == 2;
-                break;
-            default:
-                break;
-        } break;
-    case 'ground':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 2;
-                break;
-            case 'electric' :
-                $typeMult == 2;
-                break;
-            case 'grass' :
-                $typeMult == 0.5;
-                break;
-            case 'poison' :
-                $typeMult == 2;
-                break;
-            case 'bug' :
-                $typeMult == 0.5;
-                break;
-            case 'flying' :
-                $typeMult == 0;
-                break;
-            case 'rock' :
-                $typeMult == 2;
-                break;
-            case 'steel' :
-                $typeMult == 2;
-                break;
-            default:
-                break;
-        } break;
-    case 'flying':
-        switch ($typeD){
-            case 'grass' :
-                $typeMult == 2;
-                break;
-            case 'electric' :
-                $typeMult == 0.5;
-                break;
-            case 'figthing' :
-                $typeMult == 2;
-                break;
-            case 'bug' :
-                $typeMult == 2;
-                break;
-            case 'rock' :
-                $typeMult == 0.5;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'psychic':
-        switch ($typeD){
-            case 'fighting' :
-                $typeMult == 2;
-                break;
-            case 'poison' :
-                $typeMult == 2;
-                break;
-            case 'psychic' :
-                $typeMult == 0.5;
-                break;
-            case 'dark' :
-                $typeMult == 0;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'bug':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 0.5;
-                break;
-            case 'fighting' :
-                $typeMult == 0.5;
-                break;
-            case 'grass' :
-                $typeMult == 2;
-                break;
-            case 'poison' :
-                $typeMult == 0.5;
-                break;
-            case 'psychic' :
-                $typeMult == 2;
-                break;
-            case 'flying' :
-                $typeMult == 0.5;
-                break;
-            case 'ghost' :
-                $typeMult == 0.5;
-                break;
-            case 'dark' :
-                $typeMult == 2;
-                break;
-            case 'fairy' :
-                $typeMult == 0.5;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'rock':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 2;
-                break;
-            case 'ice' :
-                $typeMult == 2;
-                break;
-            case 'fighting' :
-                $typeMult == 0.5;
-                break;
-            case 'grounded' :
-                $typeMult == 0.5;
-                break;
-            case 'flying' :
-                $typeMult == 2;
-                break;
-            case 'bug' :
-                $typeMult == 2;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'ghost':
-        switch ($typeD){
-            case 'normal' :
-                $typeMult == 0;
-                break;
-            case 'psychic' :
-                $typeMult == 2;
-                break;
-            case 'ghost' :
-                $typeMult == 2;
-                break;
-            case 'dark' :
-                $typeMult == 2;
-                break;
-            default:
-                break;
-        } break;
-    case 'dragon':
-        switch ($typeD){
-            case 'dragon' :
-                $typeMult == 2;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            case 'fairy' :
-                $typeMult == 0;
-                break;
-            default:
-                break;
-        } break;
-    case 'dark':
-        switch ($typeD){
-            case 'fighting' :
-                $typeMult == 0.5;
-                break;
-            case 'psychic' :
-                $typeMult == 2;
-                break;
-            case 'ghost' :
-                $typeMult == 2;
-                break;
-            case 'dark' :
-                $typeMult == 0.5;
-                break;
-            case 'fairy' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'steel':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 0.5;
-                break;
-            case 'water' :
-                $typeMult == 0.5;
-                break;
-            case 'electric' :
-                $typeMult == 0.5;
-                break;
-            case 'ice' :
-                $typeMult == 2;
-                break;
-            case 'rock' :
-                $typeMult == 2;
-                break;
-            case 'fairy' :
-                $typeMult == 2;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
-    case 'fairy':
-        switch ($typeD){
-            case 'fire' :
-                $typeMult == 0.5;
-                break;
-            case 'poison' :
-                $typeMult == 0.5;
-                break;
-            case 'fighting' :
-                $typeMult == 2;
-                break;
-            case 'dragon' :
-                $typeMult == 2;
-                break;
-            case 'dark' :
-                $typeMult == 2;
-                break;
-            case 'steel' :
-                $typeMult == 0.5;
-                break;
-            default:
-                break;
-        } break;
+      switch ($typeA) {
+
+        case 'NORMAL':
+            switch ($typeD){
+                case 'ROCK' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GHOST' :
+                    $typeMult = 0;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'FIRE':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 0.5;
+                    break;
+                case 'WATER' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 2;
+                    break;
+                case 'ICE' :
+                    $typeMult = 2;
+                    break;
+                case 'BUG' :
+                    $typeMult = 2;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 0.5;
+                    break;
+                case 'DRAGON' :
+                    $typeMult = 0.5;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 2;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'WATER':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 2;
+                    break;
+                case 'GROUND' :
+                    $typeMult = 2;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 0.5;
+                    break;
+                case 'WATER' :
+                    $typeMult = 0.5;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 2;
+                    break;
+                case 'DRAGON' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'ELECTRIC':
+            switch ($typeD){
+                case 'WATER' :
+                    $typeMult = 2;
+                    break;
+                case 'ELECTRIC' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GROUND' :
+                    $typeMult = 0;
+                    break;
+                case 'FLYING' :
+                    $typeMult = 2;
+                    break;
+                case 'DRAGON' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'GRASS':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 0.5;
+                    break;
+                case 'WATER' :
+                    $typeMult = 2;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 0.5;
+                    break;
+                case 'POISON' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GROUND' :
+                    $typeMult = 2;
+                    break;
+                case 'FLYING' :
+                    $typeMult = 0.5;
+                    break;
+                case 'BUG' :
+                    $typeMult = 0.5;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 2;
+                    break;
+                case 'DRAGON' :
+                    $typeMult = 0.5;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'ICE':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 0.5;
+                    break;
+                case 'WATER' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 2;
+                    break;
+                case 'ICE' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GROUND' :
+                    $typeMult = 2;
+                    break;
+                case 'FLYING' :
+                    $typeMult = 2;
+                    break;
+                case 'DRAGON' :
+                    $typeMult = 2;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'FIGHTING':
+            switch ($typeD){
+                case 'NORMAL' :
+                    $typeMult = 2;
+                    break;
+                case 'ICE' :
+                    $typeMult = 2;
+                    break;
+                case 'PSYCHIC' :
+                    $typeMult = 0.5;
+                    break;
+                case 'POISON' :
+                    $typeMult = 0.5;
+                    break;
+                case 'DARK' :
+                    $typeMult = 2;
+                    break;
+                case 'FLYING' :
+                    $typeMult = 0.5;
+                    break;
+                case 'BUG' :
+                    $typeMult = 0.5;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 2;
+                    break;
+                case 'GHOST' :
+                    $typeMult = 0;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 2;
+                    break;
+                case 'FAIRY' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'POISON':
+            switch ($typeD){
+                case 'POISON' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GROUND' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 2;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GHOST' :
+                    $typeMult = 0.5;
+                    break;
+                case 'FAIRY' :
+                    $typeMult = 2;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'GROUND':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 2;
+                    break;
+                case 'ELECTRIC' :
+                    $typeMult = 2;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 0.5;
+                    break;
+                case 'POISON' :
+                    $typeMult = 2;
+                    break;
+                case 'BUG' :
+                    $typeMult = 0.5;
+                    break;
+                case 'FLYING' :
+                    $typeMult = 0;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 2;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 2;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'FLYING':
+            switch ($typeD){
+                case 'GRASS' :
+                    $typeMult = 2;
+                    break;
+                case 'ELECTRIC' :
+                    $typeMult = 0.5;
+                    break;
+                case 'figthing' :
+                    $typeMult = 2;
+                    break;
+                case 'BUG' :
+                    $typeMult = 2;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 0.5;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'PSYCHIC':
+            switch ($typeD){
+                case 'FIGHTING' :
+                    $typeMult = 2;
+                    break;
+                case 'POISON' :
+                    $typeMult = 2;
+                    break;
+                case 'PSYCHIC' :
+                    $typeMult = 0.5;
+                    break;
+                case 'DARK' :
+                    $typeMult = 0;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'BUG':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 0.5;
+                    break;
+                case 'FIGHTING' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GRASS' :
+                    $typeMult = 2;
+                    break;
+                case 'POISON' :
+                    $typeMult = 0.5;
+                    break;
+                case 'PSYCHIC' :
+                    $typeMult = 2;
+                    break;
+                case 'FLYING' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GHOST' :
+                    $typeMult = 0.5;
+                    break;
+                case 'DARK' :
+                    $typeMult = 2;
+                    break;
+                case 'FAIRY' :
+                    $typeMult = 0.5;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'ROCK':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 2;
+                    break;
+                case 'ICE' :
+                    $typeMult = 2;
+                    break;
+                case 'FIGHTING' :
+                    $typeMult = 0.5;
+                    break;
+                case 'GROUNDed' :
+                    $typeMult = 0.5;
+                    break;
+                case 'FLYING' :
+                    $typeMult = 2;
+                    break;
+                case 'BUG' :
+                    $typeMult = 2;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'GHOST':
+            switch ($typeD){
+                case 'NORMAL' :
+                    $typeMult = 0;
+                    break;
+                case 'PSYCHIC' :
+                    $typeMult = 2;
+                    break;
+                case 'GHOST' :
+                    $typeMult = 2;
+                    break;
+                case 'DARK' :
+                    $typeMult = 2;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'DRAGON':
+            switch ($typeD){
+                case 'DRAGON' :
+                    $typeMult = 2;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                case 'FAIRY' :
+                    $typeMult = 0;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'DARK':
+            switch ($typeD){
+                case 'FIGHTING' :
+                    $typeMult = 0.5;
+                    break;
+                case 'PSYCHIC' :
+                    $typeMult = 2;
+                    break;
+                case 'GHOST' :
+                    $typeMult = 2;
+                    break;
+                case 'DARK' :
+                    $typeMult = 0.5;
+                    break;
+                case 'FAIRY' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'STEEL':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 0.5;
+                    break;
+                case 'WATER' :
+                    $typeMult = 0.5;
+                    break;
+                case 'ELECTRIC' :
+                    $typeMult = 0.5;
+                    break;
+                case 'ICE' :
+                    $typeMult = 2;
+                    break;
+                case 'ROCK' :
+                    $typeMult = 2;
+                    break;
+                case 'FAIRY' :
+                    $typeMult = 2;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        case 'FAIRY':
+            switch ($typeD){
+                case 'FIRE' :
+                    $typeMult = 0.5;
+                    break;
+                case 'POISON' :
+                    $typeMult = 0.5;
+                    break;
+                case 'FIGHTING' :
+                    $typeMult = 2;
+                    break;
+                case 'DRAGON' :
+                    $typeMult = 2;
+                    break;
+                case 'DARK' :
+                    $typeMult = 2;
+                    break;
+                case 'STEEL' :
+                    $typeMult = 0.5;
+                    break;
+                default:
+                    break;
+            } break;
+        default:
+            //$typeMult = 1;
+            break;
+    }
+    return $typeMult;
 }
+
+
 ?>
